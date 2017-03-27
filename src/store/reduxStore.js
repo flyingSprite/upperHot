@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware,compose } from 'redux';
 import thunk from 'redux-thunk';
-import reducer from '../reducers';
+import reducer from '../reducer';
 // import DevTools from '../devTools/dev-tool.js';
 
 //applyMiddleware来自redux可以包装 store 的 dispatch
@@ -19,8 +19,8 @@ export default function configureStore(initialState) {
   //热替换选项
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
-    module.hot.accept('../reducers', () => {
-      const nextReducer = require('../reducers');
+    module.hot.accept('../reducer', () => {
+      const nextReducer = require('../reducer');
       store.replaceReducer(nextReducer);
     });
   }

@@ -5,13 +5,15 @@ import {
   Link
 } from 'react-router-dom';
 
-export default class Route extends Component {
+import Dashboard from '../container/Dashboard/Dashboard'
+
+export default class UpperHotRoute extends Component {
 
   render() {
-    <Router>
+    return (<Router>
       <div>
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/" component={Dashboard}/>
       </div>
-    </Router>
+    </Router>);
   }
 }

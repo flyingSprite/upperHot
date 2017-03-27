@@ -3,13 +3,11 @@ const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanPlugin = require('clean-webpack-plugin');
 
-const nodeEnv = process.env.NODE_ENV || 'development';
+// const nodeEnv = process.env.NODE_ENV || 'development';
 
 module.exports = {
   entry: {
     app: [
-      'webpack-dev-server/client?http://localhost:8080',
-			'webpack/hot/only-dev-server',
       'babel-polyfill',
       path.join(__dirname, 'src/app')
     ]
@@ -56,7 +54,7 @@ module.exports = {
       options: { context: __dirname },
       debug: true
     }),
-    new webpack.BannerPlugin({banner: 'Banner', raw: true, entryOnly: true}),
+    // new webpack.BannerPlugin({banner: 'Banner', raw: true, entryOnly: true}),
     new ExtractTextPlugin({
       filename: 'bundle.css',
       disable: false,

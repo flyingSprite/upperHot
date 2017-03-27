@@ -1,7 +1,7 @@
 // Styles - Public
 import 'material-design-icons';
 
-import './asserts/index.scss';
+import './assert/index.scss';
 
 
 // Libraries
@@ -15,6 +15,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+import UpperHotRoute from './route';
+
 // Store
 import configureStore from './store/reduxStore';
 
@@ -23,9 +25,9 @@ const store = configureStore();
 injectTapEventPlugin();
 ReactDOM.render(
   <Provider store={store}>
-    <MuiThemeProvider muiTheme={muiTheme}>
+    <MuiThemeProvider muiTheme={getMuiTheme()}>
       <div className="wrapper vertical-sidebar cyan-scheme">
-        {this.props.children}
+        <UpperHotRoute />
       </div>
     </MuiThemeProvider>
   </Provider>,
