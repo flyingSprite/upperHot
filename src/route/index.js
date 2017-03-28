@@ -5,15 +5,25 @@ import {
   Link
 } from 'react-router-dom';
 
-import Dashboard from '../container/Dashboard/Dashboard'
+// Load Material UI styles.
+import UpperHotMain from '../container/UpperHotMain';
+
+// Load container pages.
+import DefaultDashboard from '../container/Dashboard/DefaultDashboard'
+import DashboardV1 from '../container/Dashboard/DashboardV1'
 
 export default class UpperHotRoute extends Component {
 
   render() {
-    return (<Router>
-      <div>
-        <Route exact path="/" component={Dashboard}/>
-      </div>
-    </Router>);
+    const appTitle = 'Upper Hot';
+    return (
+      <Router>
+        <UpperHotMain>
+          <Route exact path="/" component={DefaultDashboard}/>
+          <Route path="/default" component={DefaultDashboard}/>
+          <Route path="/v1" component={DashboardV1}/>
+        </UpperHotMain>
+      </Router>
+    );
   }
 }

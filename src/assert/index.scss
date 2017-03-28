@@ -1,0 +1,16 @@
+
+body {
+    margin: 0 auto;
+}
+
+.main-content{
+    padding-left: 0;
+
+    .active {
+        padding-left: 256px;
+    }
+}
+
+.main-content .active {
+    padding-left: 256;
+}
