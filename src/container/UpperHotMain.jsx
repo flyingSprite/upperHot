@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import classNames from 'classNames';
 
 // Load Material UI styles.
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+// import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
@@ -39,8 +39,12 @@ class UpperHotMain extends Component {
     const contentClassnames = classNames({
       'active': this.state.open
     });
+    const footerClassnames = classNames({
+      'active': this.state.open,
+      'footer': true
+    });
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+      <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div className="wrapper vertical-sidebar cyan-scheme">
           <AppBar title={appTitle} onLeftIconButtonTouchTap={::this.showSideBar.bind(this, true)}/>
           <Drawer width={256} open={this.state.open} >
@@ -51,6 +55,11 @@ class UpperHotMain extends Component {
             <div className={contentClassnames}>
               <Paper style={style} zDepth={3} >
                 {this.props.children}
+              </Paper>
+            </div>
+            <div className={footerClassnames}>
+              <Paper style={style} zDepth={3} >
+                Copyright©1998 - 2016 中国万网 版权所有 京ICP备15035972号-1
               </Paper>
             </div>
           </div>

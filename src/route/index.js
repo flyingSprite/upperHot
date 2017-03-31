@@ -19,7 +19,7 @@ export default class UpperHotRoute extends Component {
     return (
       <Router>
         <UpperHotMain>
-          <Route exact path="/" component={DefaultDashboard}/>
+          <Route exact path="/" component={DashboardV1}/>
           <Route path="/default" component={DefaultDashboard}/>
           <Route path="/v1" component={DashboardV1}/>
         </UpperHotMain>

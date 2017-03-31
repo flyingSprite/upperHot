@@ -8,11 +8,8 @@ class HotMenu extends Component {
 
   render() {
     return (
-      <div>
-        {/*<Link to="/v1" ><MenuItem primaryText="Refresh" /></Link>
-        <Link to="/default" ><MenuItem primaryText="feedback" /></Link>*/}
-        
-        <MenuItem>Help &amp; feedback</MenuItem>
+      <div className="menu-container">
+        <Link to="/" ><MenuItem>Drawcrawl</MenuItem></Link>
         <MenuItem>Settings</MenuItem>
         <MenuItem>Sign out</MenuItem>
         <MenuItem>Refresh</MenuItem>
